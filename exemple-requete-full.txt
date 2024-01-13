@@ -1,0 +1,10 @@
+SELECT name FROM person 
+JOIN facebook_event_checkin AS fb ON person.id=fb.person_id
+JOIN drivers_license AS dl ON person.license_id=dl.id 
+WHERE fb.event_name LIKE '%ympho%' 
+AND fb.date LIKE '2017%'
+AND dl.height BETWEEN 65 AND 67
+AND dl.hair_color='red'
+AND dl.car_model='Model S'
+AND dl.gender LIKE '%emale%'
+GROUP BY fb.event_name
